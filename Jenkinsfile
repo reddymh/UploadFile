@@ -29,6 +29,29 @@ stage ('Checkout') {
             }
             
         }
-        
-    }
+        stage ('Build Docker Image'){
+            steps{
+				echo "######################### Building Docker Image for JavaWebApp #############################"
+                sh 'docker build -t tomcatjavaapp:1.0 .'
+				echo "######################### Built Docker Image for JavaWebApp Successfully #############################"
+            }
+            
+        }
+		stage ('Deploy Docker Container On Dev Env'){
+            steps{
+				echo " #################### Stopping JavaWebApp Container #######################"
+				sh ' docker stop JavaWebapp '
+				echo " #################### Stopped JavaWebApp Container ########################"
+				echo " #################### Removing JavaWebApp Container #######################"
+				sh ' docker rm JavaWebapp "
+				echo " #################### Removed JavaWebApp Container #######################"
+				echo " #################### Starting JavaWebApp Container #######################"
+                sh ' docker run -p 8086:8080 -d --name JavaWebapp -it tomcatjavaapp:1.0'
+				echo " #################### Started JavaWebApp Container #######################"
+				echo " #################### JavaWebApp URL : http://blrrnd.corp.tangoe.com:8086/uploadfile #######################"
+            }
+            
+        }
+    
+	
 }
