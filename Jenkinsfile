@@ -43,7 +43,7 @@ stage ('Checkout') {
 				sh ' docker stop JavaWebapp '
 				echo " #################### Stopped JavaWebApp Container ########################"
 				echo " #################### Removing JavaWebApp Container #######################"
-				sh ' docker rm JavaWebapp "
+				sh ' docker rm JavaWebapp '
 				echo " #################### Removed JavaWebApp Container #######################"
 				echo " #################### Starting JavaWebApp Container #######################"
                 sh ' docker run -p 8086:8080 -d --name JavaWebapp -it tomcatjavaapp:1.0'
