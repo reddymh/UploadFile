@@ -52,6 +52,5 @@ stage ('Checkout') {
             }
             
         }
-    
-	
+	}
 }
