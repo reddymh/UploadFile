@@ -14,11 +14,7 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
  
-/**
- * A Java servlet that handles file upload from client.
- *
- * @author www.codejava.net
- */
+
 public class UploadFile extends HttpServlet {
     private static final long serialVersionUID = 1L;
      
@@ -64,11 +60,11 @@ public class UploadFile extends HttpServlet {
         // this path is relative to application's directory
        // String uploadPath = getServletContext().getRealPath("")
              //   + File.separator + UPLOAD_DIRECTORY;
-         String uploadPath = "/s3-mount";
+         String uploadPath = "/apps/uploadfiles";
         // creates the directory if it does not exist
         File uploadDir = new File(uploadPath);
         if (!uploadDir.exists()) {
-            uploadDir.mkdir();
+            uploadDir.mkdirs();
         }
  
         try {

@@ -7,18 +7,27 @@
     id="WebApp_ID" version="2.5">
   <display-name>UploadFileExample</display-name>
    
+ 
   <servlet>
-    <display-name>UploadFile</display-name>
-    <servlet-name>UploadFile</servlet-name>
-    <servlet-class>com.td.uploadfile.UploadFile</servlet-class>
+  	<servlet-name>UploadFile</servlet-name>
+  	<servlet-class>com.td.uploadfile.UploadFile</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>TestUpload</servlet-name>
+
+  	<servlet-class>com.td.uploadfile.TestUpload</servlet-class>
   </servlet>
    
   <servlet-mapping>
     <servlet-name>UploadFile</servlet-name>
-    <url-pattern>/uploadFile</url-pattern>
+    <url-pattern>/UploadFile</url-pattern>
   </servlet-mapping>
-     
+  <servlet-mapping>
+  	<servlet-name>TestUpload</servlet-name>
+  	<url-pattern>/TestUpload</url-pattern>
+  </servlet-mapping>
+
   <welcome-file-list>
-    <welcome-file>upload.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
 </web-app>
