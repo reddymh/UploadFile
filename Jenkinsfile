@@ -46,7 +46,7 @@ stage ('Checkout') {
 				sh ' docker rm JavaWebapp '
 				echo " #################### Removed JavaWebApp Container #######################"
 				echo " #################### Starting JavaWebApp Container #######################"
-                sh ' docker run -p 8086:8080 -d --name JavaWebapp -it tomcatjavaapp:1.0'
+                sh ' docker run -p 8086:8080 -d --name JavaWebapp --net=host -it tomcatjavaapp:1.0'
 				echo " #################### Started JavaWebApp Container #######################"
 				echo " #################### JavaWebApp URL : http://blrrnd.corp.tangoe.com:8086/uploadfile #######################"
             }
